@@ -31,11 +31,11 @@ const MicroplasticsDetectionSystem = () => {
         dominantPolymer: 'Polyethylene (PE)',
         averageSize: '31.7μm',
         confidenceScore: 96.8,
-        detectionTime: '2.3 min',
+        detectionTime: '8.1 min',
         sampleVolume: '50 mL',
         batteryLevel: 87,
         sensorStatus: 'Active',
-        calibrationDate: '2024-09-01'
+        calibrationDate: '2025-09-04'
     };
 
     const CustomTooltip = ({ active, payload, label }) => {
@@ -61,7 +61,7 @@ const MicroplasticsDetectionSystem = () => {
                     <div className="flex items-center space-x-4">
                         <div className="flex items-center space-x-2">
                             <img src={image} alt="Logo" className="h-8 w-8" />
-                            <h1 className="text-2xl font-bold text-white">MicroVision</h1>
+                            <h1 className="text-2xl font-bold text-white">Vision</h1>
                         </div>
                         <div className="text-sm text-gray-400">
                             Field-Deployable Microplastics Detection System
