@@ -21,8 +21,9 @@ const MicroplasticsDetectionSystem = () => {
 
 
     const polymerTypeData = [
-        { name: 'Polyethylene (PE)', value: 110, color: '#10b981', particles: 63 },
-        { name: 'Polypropylene (PP)', value: 55, color: '#3b82f6', particles: 40 },
+        { name: 'Polyethylene (PE)', value: 110, color: '#10b981', particles: 110 },
+        { name: 'Polypropylene (PP)', value: 45, color: '#3b82f6', particles: 45 },
+        { name: 'Others', value: 10, color: '#D3D3D3', particles: 10 }
     ];
 
 
