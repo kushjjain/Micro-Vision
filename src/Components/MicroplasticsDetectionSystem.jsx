@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line, Legend, ScatterChart, Scatter, Area, AreaChart } from 'recharts';
 import { Upload, Camera, FileImage, AlertTriangle, CheckCircle2, Activity, Beaker, Waves, Microscope, Zap, Database, Settings, Eye, TrendingUp } from 'lucide-react';
 import image from "../assets/image.png";
+import image_ai from "../assets/image_ai.png";
 
 const MicroplasticsDetectionSystem = () => {
     const [currentTime, setCurrentTime] = useState(new Date());
@@ -21,7 +22,7 @@ const MicroplasticsDetectionSystem = () => {
 
     const polymerTypeData = [
         { name: 'Polyethylene (PE)', value: 110, color: '#10b981', particles: 63 },
-        { name: 'Polypropylene (PP)', value: 24, color: '#3b82f6', particles: 40 },
+        { name: 'Polypropylene (PP)', value: 55, color: '#3b82f6', particles: 40 },
     ];
 
 
@@ -31,7 +32,7 @@ const MicroplasticsDetectionSystem = () => {
         dominantPolymer: 'Polyethylene (PE)',
         averageSize: '31.7μm',
         confidenceScore: 96.8,
-        detectionTime: '8.1 min',
+        detectionTime: '14.5 min',
         sampleVolume: '50 mL',
         batteryLevel: 87,
         sensorStatus: 'Active',
@@ -96,7 +97,7 @@ const MicroplasticsDetectionSystem = () => {
                             <div>
                                 <p className="text-xs font-medium text-gray-400 uppercase tracking-wide">Concentration</p>
                                 <p className="text-2xl font-bold text-white">{systemMetrics.concentration}</p>
-                                <p className="text-xs text-gray-500">particles/L</p>
+                                <p className="text-xs text-gray-500">particles/10ml</p>
                             </div>
                             <Beaker className="h-8 w-8 text-red-400" />
                         </div>
@@ -153,7 +154,7 @@ const MicroplasticsDetectionSystem = () => {
                             <Camera className="h-5 w-5 mr-2 text-blue-400" />
                             Raw Microscopic Capture
                         </h3>
-                        <div className="border border-gray-600/50 rounded-lg p-4 bg-gray-900/30">
+                        {/* <div className="border border-gray-600/50 rounded-lg p-4 bg-gray-900/30">
                             <div className="aspect-video bg-gradient-to-br from-blue-900/20 to-gray-900/50 rounded-lg flex items-center justify-center mb-4 relative overflow-hidden">
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/10 to-transparent animate-pulse"></div>
                                 <div className="text-center z-10">
@@ -168,6 +169,35 @@ const MicroplasticsDetectionSystem = () => {
                                 <span>Focus: Auto</span>
                                 <span>LED: Full Spectrum</span>
                             </div>
+                        </div> */}
+                        <div className="border border-gray-600/50 rounded-lg p-4 bg-gray-900/30">
+                            <div className="aspect-video bg-gradient-to-br from-blue-900/20 to-gray-900/50 rounded-lg flex items-center justify-center mb-4 relative overflow-hidden">
+
+                                {/* Full background image */}
+                                <img
+                                    src={image}
+                                    alt="Live Imaging"
+                                    className="absolute inset-0 w-full h-full object-cover"
+                                />
+
+                                {/* Blue gradient pulse overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/10 to-transparent animate-pulse"></div>
+
+                                {/* Content (spinner + text) */}
+                                <div className="text-center z-10">
+                                    <div className="w-16 h-16 border-4 border-blue-400 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
+                                    <p className="text-blue-400 font-medium">Live Imaging Active</p>
+                                </div>
+
+                                {/* Bottom bounce overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-400/20 to-transparent h-full animate-bounce"></div>
+                            </div>
+
+                            <div className="flex justify-between text-xs text-gray-400">
+                                <span>Resolution: 3280×2464</span>
+                                <span>Focus: Auto</span>
+                                <span>LED: Full Spectrum</span>
+                            </div>
                         </div>
                     </div>
 
@@ -176,27 +206,41 @@ const MicroplasticsDetectionSystem = () => {
                             <Eye className="h-5 w-5 mr-2 text-green-400" />
                             AI-Processed Detection
                         </h3>
+
                         <div className="border border-gray-600 rounded-lg p-4 bg-gray-900/50">
-                            <div className="aspect-video bg-gradient-to-br from-green-900/20 to-gray-900/50 rounded-lg flex items-center justify-center mb-4 relative">
-                                <div className="text-center">
-                                    <CheckCircle2 className="h-12 w-12 text-green-400 mx-auto mb-3" />
-                                    <p className="text-green-400 font-medium">165 Particles Detected</p>
-                                    <p className="text-gray-400 text-sm">ML Processing Complete</p>
+                            <div className="aspect-video bg-gradient-to-br from-green-900/20 to-gray-900/50 rounded-lg flex items-center justify-center mb-4 relative overflow-hidden">
+
+                                {/* Background image */}
+                                <img
+                                    src={image_ai}
+                                    alt="AI Processed Detection"
+                                    className="absolute inset-0 w-full h-full object-cover"
+                                />
+
+                                {/* Foreground content */}
+                                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 
+                flex items-center gap-2 bg-black/60 text-green-400 
+                px-3 py-1 rounded-md text-[16px] shadow-md">
+                                    <CheckCircle2 className="h-4 w-4" />
+                                    <span>33 Particles Detected</span>
+
                                 </div>
+
+                                {/* Overlay pulse dots */}
                                 <div className="absolute top-4 left-4 w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
                                 <div className="absolute bottom-4 right-4 w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
                             </div>
+
                             <div className="flex justify-between text-xs">
                                 <div className="flex items-center">
                                     <div className="w-2 h-2 bg-red-500 rounded-full mr-1"></div>
-                                    <span className="text-gray-400">PE (63)</span>
+                                    <span className="text-gray-400">PE</span>
                                 </div>
 
                                 <div className="flex items-center">
                                     <div className="w-2 h-2 bg-yellow-500 rounded-full mr-1"></div>
-                                    <span className="text-gray-400">PS (30)</span>
+                                    <span className="text-gray-400">PP</span>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -254,26 +298,46 @@ const MicroplasticsDetectionSystem = () => {
                                     dataKey="value"
                                     isAnimationActive={false}
                                 >
-                                    {polymerTypeData.map((entry, index) => (
-                                        <Cell key={`cell-${index}`} fill={entry.color} />
-                                    ))}
+                                    {polymerTypeData.map((entry, index) => {
+                                        let fillColor = "#9CA3AF"; // default gray
+
+                                        if (entry.name.toLowerCase().includes("polyethylene")) {
+                                            fillColor = "#3B82F6"; // blue
+                                        } else if (entry.name.toLowerCase().includes("polypropylene")) {
+                                            fillColor = "#F97316"; // orange
+                                        }
+
+                                        return <Cell key={`cell-${index}`} fill={fillColor} />;
+                                    })}
                                 </Pie>
+
                                 <Tooltip content={<CustomTooltip />} />
                             </PieChart>
                         </ResponsiveContainer>
                         <div className="mt-4 grid grid-cols-2 gap-2 text-xs">
-                            {polymerTypeData.map((item, index) => (
-                                <div key={index} className="flex items-center">
-                                    <div
-                                        className="w-3 h-3 rounded-full mr-2"
-                                        style={{ backgroundColor: item.color }}
-                                    ></div>
-                                    <span className="text-gray-300 truncate">
-                                        {item.name.split(" ")[0]} ({item.value})
-                                    </span>
-                                </div>
-                            ))}
+                            {polymerTypeData.map((item, index) => {
+                                let color = "#9CA3AF"; // default gray
+
+                                if (item.name.toLowerCase().includes("polyethylene")) {
+                                    color = "#3B82F6"; // blue
+                                } else if (item.name.toLowerCase().includes("polypropylene")) {
+                                    color = "#F97316"; // orange
+                                }
+
+                                return (
+                                    <div key={index} className="flex items-center">
+                                        <div
+                                            className="w-3 h-3 rounded-full mr-2"
+                                            style={{ backgroundColor: color }}
+                                        ></div>
+                                        <span className="text-gray-300 truncate">
+                                            {item.name.split(" ")[0]} ({item.value})
+                                        </span>
+                                    </div>
+                                );
+                            })}
                         </div>
+
 
                     </div>
                 </div>
@@ -331,7 +395,7 @@ const MicroplasticsDetectionSystem = () => {
                             </div>
                             <div className="flex justify-between items-center">
                                 <span className="text-gray-400 text-sm">Data Storage</span>
-                                <span className="text-white font-medium">2.4 GB used</span>
+                                <span className="text-white font-medium">120 KB used</span>
                             </div>
                             <div className="flex justify-between items-center">
                                 <span className="text-gray-400 text-sm">Network Status</span>
@@ -363,7 +427,7 @@ const MicroplasticsDetectionSystem = () => {
                     </div> */}
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
