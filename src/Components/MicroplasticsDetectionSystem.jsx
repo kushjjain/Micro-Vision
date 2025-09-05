@@ -60,8 +60,7 @@ const MicroplasticsDetectionSystem = () => {
                 <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-4">
                         <div className="flex items-center space-x-2">
-                            <img src={image} alt="Logo" className="h-8 w-8" />
-                            <h1 className="text-2xl font-bold text-white">Vision</h1>
+                            <h1 className="text-2xl font-bold text-white">&mu;Vision</h1>
                         </div>
                         <div className="text-sm text-gray-400">
                             Field-Deployable Microplastics Detection System
