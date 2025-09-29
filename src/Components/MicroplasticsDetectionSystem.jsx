@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line, Legend, ScatterChart, Scatter, Area, AreaChart } from 'recharts';
 import { Upload, Camera, FileImage, AlertTriangle, CheckCircle2, Activity, Beaker, Waves, Microscope, Zap, Database, Settings, Eye, TrendingUp } from 'lucide-react';
 import image from "../assets/image.png";
@@ -62,6 +63,7 @@ const MicroplasticsDetectionSystem = () => {
                 <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-4">
                         <div className="flex items-center space-x-2">
+                            <img src="/image.png" alt="Micro-Vision Logo" className="h-8 w-8 rounded-full object-cover" />
                             <h1 className="text-2xl font-bold text-white">&mu;Vision</h1>
                         </div>
                         <div className="text-sm text-gray-400">
@@ -69,6 +71,10 @@ const MicroplasticsDetectionSystem = () => {
                         </div>
                     </div>
                     <div className="flex items-center space-x-6">
+                        <nav className="hidden sm:flex items-center space-x-6 mr-4">
+                            <Link to="/" className="text-gray-300 hover:text-white transition-colors">Home</Link>
+                            <Link to="/about" className="text-gray-300 hover:text-white transition-colors">About</Link>
+                        </nav>
                         <div className="flex items-center space-x-2">
                             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                             <span className="text-sm text-gray-300">System Online</span>
