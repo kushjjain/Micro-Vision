@@ -64,7 +64,7 @@ function AboutUs() {
             expertise: "",
             education: "Student of Electronics and Telecommunication Engineering",
             linkedin: "https://www.linkedin.com/in/anushka-gavankar/",
-            avatar: "🧑‍💻",
+            avatar: "👩‍💻",
 
         },
         {
@@ -73,7 +73,7 @@ function AboutUs() {
             expertise: "Web | AI | Embedded",
             education: "Student of Electronics and Telecommunication Engineering",
             linkedin: "https://www.linkedin.com/in/arshia-shah-813512301/",
-            avatar: "🧑‍💻",
+            avatar: "👩‍💻",
 
         }
     ];
@@ -101,78 +101,43 @@ function AboutUs() {
         }
     ];
 
-    const milestones = [
-        {
-            year: "2023",
-            title: "Project Inception",
-            description: "Initial research and development of microplastics detection technology began."
-        },
-        {
-            year: "2024",
-            title: "Prototype Development",
-            description: "First working prototype with basic microscopy and AI detection capabilities."
-        },
-        {
-            year: "2024",
-            title: "Field Testing",
-            description: "Successful field trials in multiple water environments with 95%+ accuracy."
-        },
-        {
-            year: "2025",
-            title: "System Launch",
-            description: "Full deployment of Micro-Vision system with 96.8% detection accuracy."
-        }
-    ];
 
     return (
         <div className="min-h-screen bg-gray-900 text-white">
-            {/* Header */}
-            <div className="bg-gray-800 border-b border-gray-700 px-6 py-4">
-                <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4">
-                        <Link
-                            to="/"
-                            className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"
-                        >
-                            <ArrowLeft className="h-4 w-4" />
-                            <span>Back to Home</span>
-                        </Link>
-                    </div>
-                    <div className="flex items-center space-x-4">
-                        <div className="flex items-center space-x-2">
-                            <img src="/image.png" alt="Micro-Vision Logo" className="h-8 w-8 rounded-full object-cover" />
-                            <h1 className="text-2xl font-bold text-white">&mu;Vision</h1>
-                        </div>
-                        <div className="text-sm text-gray-400">
-                            About Our Team
-                        </div>
-                    </div>
-                    <nav className="flex items-center space-x-6">
-                        <Link
-                            to="/microplastics"
-                            className="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition-colors"
-                        >
-                            <Microscope className="h-4 w-4" />
-                            <span>Detection System</span>
-                        </Link>
-
-                    </nav>
-                </div>
-            </div>
+            
 
             {/* Hero Section */}
             <div className="relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-gray-900 to-blue-900/20"></div>
-                <div className="relative px-6 py-20">
+                                {/* Team Image Background */}
+                                <img
+                                    src="/team.jpg" // Change to your team image path if needed
+                                    alt="Team"
+                                    className="absolute inset-0 w-full h-full object-cover opacity-30 z-0"
+                                    style={{ pointerEvents: 'none' }}
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-gray-900 to-blue-900/20"></div>
+                                <div className="relative px-6 py-70">
                     <div className="max-w-7xl mx-auto text-center">
                         <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-blue-400 to-green-400 bg-clip-text text-transparent">
-                            About Eureka 200
+                            About Eureka<span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400 bg-clip-text text-transparent" style={{ fontSize: "2rem" }}>_</span>200
                         </h1>
                         <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
                             We are a passionate team of aspiring engineers dedicated to solving the microplastics crisis through innovative technology.
                         </p>
+                        {/* Meet the Team Button */}
+                        <button
+                            onClick={() => {
+                                const el = document.getElementById('team-section');
+                                if (el) {
+                                    el.scrollIntoView({ behavior: 'smooth' });
+                                }
+                            }}
+                            className="mt-8 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold rounded-lg shadow transition-colors"
+                        >
+                            Meet the Team
+                        </button>
                     </div>
-                </div>
+                                </div>
             </div>
 
             {/* Mission Section */}
@@ -221,7 +186,7 @@ function AboutUs() {
             </div>
 
             {/* Team Section */}
-            <div className="px-6 py-20">
+            <div id="team-section" className="px-6 py-20">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">Meet Our Team</h2>
@@ -232,7 +197,10 @@ function AboutUs() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                         {teamMembers.map((member, index) => (
-                            <div key={index} className="bg-gray-800/60 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-gray-600/50 transition-colors">
+                                                        <div
+                                                            key={index}
+                                                            className="bg-gray-800/60 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-gray-600/50 transition-colors hover:shadow-[0_0_24px_8px_rgba(59,130,246,0.4)] hover:shadow-blue-400"
+                                                        >
                                 <div className="flex items-start space-x-4">
                                     <div className="text-4xl">{member.avatar}</div>
                                     <div className="flex-1">
@@ -289,11 +257,7 @@ function AboutUs() {
                             <span className="text-gray-400">|</span>
                             <span className="text-gray-400">Microplastics Detection System</span>
                         </div>
-                        <div className="flex space-x-6">
-                            <Link to="/" className="text-gray-400 hover:text-white transition-colors">Home</Link>
-                            <Link to="/microplastics" className="text-gray-400 hover:text-white transition-colors">Detection</Link>
-                            <Link to="/about" className="text-gray-400 hover:text-white transition-colors">About</Link>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

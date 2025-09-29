@@ -27,7 +27,7 @@ function Home() {
   const features = [
     {
       icon: <Microscope className="h-8 w-8 text-blue-400" />,
-      title: "Digital Holography",
+      title: "Digital Inline Holography",
       description: "Label-free 3D quantitative phase imaging with wide field-of-view for robust particle detection"
     },
     {
@@ -56,29 +56,7 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      {/* Header - Semi-transparent Navbar */}
-      <div className="bg-gray-800/70 border-b border-gray-700 px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
-              <img src="/image.png" alt="Micro-Vision Logo" className="h-8 w-8 rounded-full object-cover" />
-              <h1 className="text-2xl font-bold text-white">&mu;Vision</h1>
-            </div>
-            <div className="text-sm text-gray-400">
-              Field-Deployable Microplastics Detection System
-            </div>
-          </div>
-          <nav className="flex items-center space-x-6">
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-sm text-gray-300">System Online</span>
-            </div>
-            <div className="text-sm text-gray-400">
-              {currentTime.toLocaleTimeString()}
-            </div>
-          </nav>
-        </div>
-      </div>
+      {/* ...existing code... (Navbar will be added globally) */}
 
       {/* Hero Section */}
       <div className="relative overflow-hidden">
@@ -94,9 +72,9 @@ function Home() {
         <div className="relative px-6 py-40 md:py-48">
           <div className="max-w-7xl mx-auto z-20 relative">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4"> Eureka 200's</h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-4" style={{color:"rgb(196, 209, 224)"}}> Eureka_200's</h2>
               <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-green-400 bg-clip-text text-transparent">
-                Micro-Vision
+                &mu;Vision
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
                 Revolutionary field-deployable microplastics detection system powered by advanced AI and microscopy technology
@@ -121,63 +99,6 @@ function Home() {
           </div>
         </div>
       </div>
-
-      {/* Idea Sections (Title, Description, Template, Abstract)
-      <div className="px-6 py-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50">
-              <h2 className="text-2xl font-bold mb-2">Idea Title</h2>
-              <p className="text-gray-300">Field-Deployable Microplastics Detection System (&mu;Vision)</p>
-            </div>
-
-            <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50">
-              <h2 className="text-2xl font-bold mb-2">Idea Template</h2>
-              <p className="text-gray-300 mb-4">Detailed concept, problem context, approach, and outcomes.</p>
-              <div className="flex items-center gap-3">
-                <a
-                  href="/SIH%20Script.pdf"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition-colors"
-                >
-                  <span>View PDF</span>
-                </a>
-                <a
-                  href="/SIH%20Script.pdf"
-                  download
-                  className="inline-flex items-center space-x-2 bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition-colors"
-                >
-                  <span>Download</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
-            <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50">
-              <h2 className="text-2xl font-bold mb-3">Idea Description</h2>
-              <p className="text-gray-300">
-                A portable microplastics detection product that leverages digital holography (label-free 3D quantitative phase
-                imaging) and AI to rapidly identify, size, and classify polymer particles in water samples. The system minimizes
-                sample preparation, operates in the field, and delivers real-time analytics including size distribution,
-                concentration, and dominant polymer types to support timely environmental decisions.
-              </p>
-            </div>
-
-            <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50">
-              <h2 className="text-2xl font-bold mb-3">Abstract / Summary</h2>
-              <p className="text-gray-300">
-                We address limitations of conventional lab-only methods (slow prep, high cost, low throughput, and limited
-                deployability) by combining a compact digital holography module with an AI pipeline for on-device or edge
-                inference. Our approach provides wide field-of-view capture, robust detection of fragments and fibers, and
-                high-accuracy classification. The solution enables continuous, scalable monitoring of microplastics across
-                diverse environments—rivers, lakes, coastal sites—empowering stakeholders with actionable insights.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div> */}
 
       {/* Limitations of Existing Methods */}
       <div className="px-6 py-20 bg-gray-800/30">
@@ -236,10 +157,10 @@ function Home() {
       </div>
 
       {/* Features Section */}
-      <div className="px-6 py-20 bg-gray-800/30">
+      <div className="px-6 py-10 bg-gray-800/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Micro-Vision?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose &mu;Vision?</h2>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
               Our cutting-edge technology combines precision microscopy with artificial intelligence to deliver unmatched microplastics detection capabilities
             </p>
@@ -247,7 +168,10 @@ function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="bg-gray-800/60 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-gray-600/50 transition-colors">
+              <div
+                key={index}
+                className="bg-gray-800/60 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-gray-600/50 transition-colors hover:shadow-[0_0_24px_8px_rgba(59,130,246,0.4)] hover:shadow-blue-400"
+              >
                 <div className="flex justify-center mb-4">
                   {feature.icon}
                 </div>
@@ -329,11 +253,7 @@ function Home() {
               <span className="text-gray-400">|</span>
               <span className="text-gray-400">Microplastics Detection System</span>
             </div>
-            <div className="flex space-x-6">
-              <Link to="/" className="text-gray-400 hover:text-white transition-colors">Home</Link>
-              <Link to="/microplastics" className="text-gray-400 hover:text-white transition-colors">Detection</Link>
-              <Link to="/about" className="text-gray-400 hover:text-white transition-colors">About</Link>
-            </div>
+            
           </div>
         </div>
       </div>

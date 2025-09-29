@@ -410,28 +410,7 @@ const MicroplasticsDetectionSystem = () => {
                             </div>
                         </div>
                     </div>
-                    {/* 
-
-                    <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-                        <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
-                            <CheckCircle2 className="h-5 w-5 mr-2 text-green-400" />
-                            AI Recommendations
-                        </h3>
-                        <div className="space-y-3 text-sm">
-                            <div className="bg-yellow-900/20 border border-yellow-700 rounded p-3">
-                                <p className="text-yellow-300 font-medium">Attention Required</p>
-                                <p className="text-gray-300">PE concentration above normal levels</p>
-                            </div>
-                            <div className="bg-blue-900/20 border border-blue-700 rounded p-3">
-                                <p className="text-blue-300 font-medium">Analysis Complete</p>
-                                <p className="text-gray-300">Continue monitoring recommended</p>
-                            </div>
-                            <div className="bg-green-900/20 border border-green-700 rounded p-3">
-                                <p className="text-green-300 font-medium">System Optimal</p>
-                                <p className="text-gray-300">All sensors functioning normally</p>
-                            </div>
-                        </div>
-                    </div> */}
+                    
                 </div>
             </div>
         </div >
