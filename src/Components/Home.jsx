@@ -72,7 +72,7 @@ function Home() {
         <div className="relative px-6 py-40 md:py-48">
           <div className="max-w-7xl mx-auto z-20 relative">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4" style={{color:"rgb(196, 209, 224)"}}> Eureka_200's</h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-4" style={{ color: "rgb(196, 209, 224)" }}> Eureka_200's</h2>
               <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-green-400 bg-clip-text text-transparent">
                 &mu;Vision
               </h1>
@@ -81,7 +81,7 @@ function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  to="/microplastics"
+                  to="/analysis"
                   className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
                 >
                   <span>Launch Detection System</span>
@@ -253,7 +253,7 @@ function Home() {
               <span className="text-gray-400">|</span>
               <span className="text-gray-400">Microplastics Detection System</span>
             </div>
-            
+
           </div>
         </div>
       </div>
