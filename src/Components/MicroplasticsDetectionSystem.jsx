@@ -13,7 +13,7 @@ const MicroplasticsDetectionSystem = () => {
     const polymerConfidenceData = [
         { polymer: 'PE', confidence: 96.8, color: '#3B82F6' },
         { polymer: 'PS', confidence: 87.3, color: '#F97316' },
-        { polymer: 'LDPE', confidence: 78.5, color: '#EF4444' },
+        { polymer: 'LEPD', confidence: 78.5, color: '#EF4444' },
         { polymer: 'PHA', confidence: 82.1, color: '#10B981' },
     ];
 
@@ -21,33 +21,17 @@ const MicroplasticsDetectionSystem = () => {
         { name: 'PE', value: 45, color: '#3B82F6' },
         { name: 'PS', value: 32, color: '#F97316' },
         { name: 'PHA', value: 18, color: '#10B981' },
-        { name: 'LDPE', value: 25, color: '#EF4444' }
+        { name: 'LEPD', value: 25, color: '#EF4444' }
     ];
 
     // Time-based detection data
-    const timeSeriesData = [
-        { time: 'Week 1', PE: 8, PS: 5, PHA: 3, LDPE: 4 },
-        { time: 'Week 2', PE: 12, PS: 7, PHA: 4, LDPE: 6 },
-        { time: 'Week 3', PE: 9, PS: 8, PHA: 5, LDPE: 5 },
-        { time: 'Week 4', PE: 16, PS: 12, PHA: 6, LDPE: 10 },
-    ];
-
-    // Detection accuracy over time
-    const accuracyData = [
-        { sample: 'S1', accuracy: 89.5 },
-        { sample: 'S2', accuracy: 91.2 },
-        { sample: 'S3', accuracy: 93.8 },
-        { sample: 'S4', accuracy: 94.2 },
-        { sample: 'S5', accuracy: 95.1 },
-        { sample: 'S6', accuracy: 96.8 },
-    ];
 
     // Confidence comparison data
     const confidenceComparisonData = [
         { type: 'PE', avgConfidence: 96.8, detections: 45 },
         { type: 'PS', avgConfidence: 87.3, detections: 32 },
         { type: 'PHA', avgConfidence: 82.1, detections: 18 },
-        { type: 'LDPE', avgConfidence: 78.5, detections: 25 },
+        { type: 'LEPD', avgConfidence: 78.5, detections: 25 },
     ];
 
     const systemMetrics = {

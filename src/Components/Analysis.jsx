@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Play, Loader2, CheckCircle2, XCircle, AlertCircle, Microscope, Camera, Brain, Database, Zap, Eye, Image as ImageIcon, ArrowRight } from 'lucide-react';
 import ai1 from "../assets/ai1.png";
+import ai2 from "../assets/ai2.png";
 const Analysis = () => {
     const [analysisStage, setAnalysisStage] = useState('idle'); // idle, loading, processing, binary, classification, complete
     const [progress, setProgress] = useState(0);
     const [binaryResult, setBinaryResult] = useState(null);
     const [classificationResults, setClassificationResults] = useState(null);
-    const [currentPage, setCurrentPage] = useState('start'); 
+    const [currentPage, setCurrentPage] = useState('start');
 
 
     const startAnalysis = () => {
@@ -20,7 +21,7 @@ const Analysis = () => {
         setTimeout(() => {
             setCurrentPage('images');
             setAnalysisStage('processing'); // Shows loading for image 2
-        }, 5000);
+        }, 7000);
 
         // Stage 2: Show processed image after 2 more seconds (7 seconds total)
         setTimeout(() => {
@@ -30,11 +31,14 @@ const Analysis = () => {
         // Stage 3: Start binary classification (10 seconds after showing image)
         setTimeout(() => {
             setAnalysisStage('binary');
-            const isPlastic = Math.random() > 0.15;
-            setBinaryResult({
+            const isPlastic = true;
+            const result = {
                 detected: isPlastic,
-                confidence: isPlastic ? (95 + Math.random() * 4).toFixed(2) : (92 + Math.random() * 7).toFixed(2)
-            });
+                confidence: isPlastic
+                    ? 99.69
+                    : 97.6,
+            };
+            setBinaryResult(result);
         }, 17000);
 
         // Stage 4: If plastic, multi-class classification
@@ -44,10 +48,11 @@ const Analysis = () => {
                 setAnalysisStage('classification');
                 // changes
                 const results = [
-                    { name: 'PS', fullName: 'Polystyrene', confidence: (85 + Math.random() * 10).toFixed(2), color: '#F59E0B' },
-                    { name: 'PP', fullName: 'Polypropylene', confidence: (78 + Math.random() * 12).toFixed(2), color: '#3B82F6' },
-                    { name: 'PHA', fullName: 'Polyhydroxyalkanoates', confidence: (65 + Math.random() * 15).toFixed(2), color: '#10B981' },
-                    { name: 'LDPE', fullName: 'Low-Density Polyethylene', confidence: (72 + Math.random() * 13).toFixed(2), color: '#EF4444' }
+                    { name: 'PS', fullName: 'Polystyrene', confidence: 0.88, color: '#F59E0B' }, // 85–95%
+                    { name: 'PE', fullName: 'Polyethylene', confidence: 2.12, color: '#3B82F6' }, // 75–85%
+                    { name: 'PHA', fullName: 'Polyhydroxyalkanoates', confidence: 1.34, color: '#10B981' }, // 70–82%
+                    { name: 'LEPD', fullName: 'Low Environmental Plastic Degradation', confidence: 93.57, color: '#EF4444' }, // 88–95%
+                    { name: 'Other', fullName: 'Other Plastic', confidence: 2.09, color: '#8B5CF6' } // 65–78%
                 ];
                 setClassificationResults(results.sort((a, b) => b.confidence - a.confidence));
             }
@@ -199,14 +204,12 @@ const Analysis = () => {
 
                             <div className="border border-gray-600/50 rounded-lg overflow-hidden bg-gray-900/50">
                                 <div className="aspect-video bg-gradient-to-br from-blue-500/5 to-gray-900/50 flex items-center justify-center p-8">
-                                    {/* Placeholder for hardcoded image 1 */}
-                                    <div className="w-full h-full bg-gradient-to-br from-blue-600/10 to-purple-600/10 rounded-lg border-2 border-dashed border-blue-500/30 flex items-center justify-center">
-                                        <div className="text-center">
-                                            <ImageIcon className="h-16 w-16 text-blue-400/50 mx-auto mb-3" />
-                                            <p className="text-gray-400 text-sm">Raw Microscopic Sample</p>
-                                            <p className="text-gray-500 text-xs mt-1">4096×3072 • 400x Magnification</p>
-                                        </div>
-                                    </div>
+                                    {/* Image display */}
+                                    <img
+                                        src={ai1}
+                                        alt="Raw Microscopic Sample"
+                                        className="w-full h-full object-cover rounded-lg"
+                                    />
                                 </div>
                             </div>
 
@@ -245,17 +248,18 @@ const Analysis = () => {
                                             <div className="text-center">
                                                 <Loader2 className="h-16 w-16 text-green-400 animate-spin mx-auto mb-3" />
                                                 <p className="text-green-400 text-sm font-medium">Extracting Features...</p>
-                                                <p className="text-gray-500 text-xs mt-1">CNN Feature Detection Active</p>
+                                                <p className="text-gray-500 text-xs mt-1">OpenCV based Feature Extraction Active</p>
                                             </div>
                                         </div>
                                     ) : (
                                         <div className="w-full h-full rounded-lg flex items-center justify-center relative overflow-hidden">
                                             <img
-                                                src={ai1}
+                                                src={ai2}
                                                 alt="Processed Microplastic Sample"
                                                 className="w-full h-full object-cover rounded-lg"
                                             />
                                         </div>
+
                                     )}
                                 </div>
                             </div>
@@ -263,11 +267,11 @@ const Analysis = () => {
                             <div className="mt-4 space-y-2 text-sm">
                                 <div className="flex justify-between text-gray-400">
                                     <span>Processing:</span>
-                                    <span className="text-white">CNN Feature Extraction</span>
+                                    <span className="text-white">Classical CV feature extraction.</span>
                                 </div>
                                 <div className="flex justify-between text-gray-400">
                                     <span>Algorithm:</span>
-                                    <span className="text-white">ResNet-50 Transfer Learning</span>
+                                    <span className="text-white">Handcrafted feature extraction</span>
                                 </div>
                                 <div className="flex justify-between text-gray-400">
                                     <span>Status:</span>
@@ -309,7 +313,7 @@ const Analysis = () => {
                                     <span className="text-green-400 font-bold">3</span>
                                 </div>
                                 <p className="text-white font-medium mb-1">Feature Extraction</p>
-                                <p className="text-gray-400 text-xs">CNN deep learning layers</p>
+                                <p className="text-gray-400 text-xs">Statistical, texture, and morphological feature extraction</p>
                             </div>
                             <div className="bg-gray-900/50 rounded-lg p-4 border border-gray-700">
                                 <div className="w-8 h-8 rounded-full bg-yellow-600/20 border border-yellow-500/50 flex items-center justify-center mb-3">
@@ -405,11 +409,11 @@ const Analysis = () => {
                             <div className="grid grid-cols-3 gap-4 text-sm">
                                 <div className="bg-gray-900/50 rounded-lg p-4">
                                     <p className="text-gray-400 mb-1">Model Type</p>
-                                    <p className="text-white font-semibold">CNN Binary Classifier</p>
+                                    <p className="text-white font-semibold">SVM Binary Classifier</p>
                                 </div>
                                 <div className="bg-gray-900/50 rounded-lg p-4">
                                     <p className="text-gray-400 mb-1">Training Accuracy</p>
-                                    <p className="text-white font-semibold">99.57%</p>
+                                    <p className="text-white font-semibold">98.6%</p>
                                 </div>
                                 <div className="bg-gray-900/50 rounded-lg p-4">
                                     <p className="text-gray-400 mb-1">Processing Time</p>
@@ -494,15 +498,15 @@ const Analysis = () => {
                             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <div className="bg-gray-900/50 rounded-lg p-5 border border-gray-700">
                                     <p className="text-gray-400 text-sm mb-2">Classification Model</p>
-                                    <p className="text-white font-semibold text-lg">Multi-Class CNN</p>
+                                    <p className="text-white font-semibold text-lg">Multi-Class SVM</p>
                                 </div>
                                 <div className="bg-gray-900/50 rounded-lg p-5 border border-gray-700">
                                     <p className="text-gray-400 text-sm mb-2">Total Classes</p>
-                                    <p className="text-white font-semibold text-lg">4 Polymer Types</p>
+                                    <p className="text-white font-semibold text-lg">5 Polymer Types</p>
                                 </div>
                                 <div className="bg-gray-900/50 rounded-lg p-5 border border-gray-700">
                                     <p className="text-gray-400 text-sm mb-2">Model Accuracy</p>
-                                    <p className="text-white font-semibold text-lg">98.70%</p>
+                                    <p className="text-white font-semibold text-lg">96.8%</p>
                                 </div>
                             </div>
                         </div>
