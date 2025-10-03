@@ -83,35 +83,108 @@ const Analysis = () => {
     };
 
     // START PAGE
+    // if (currentPage === 'start') {
+    //     return (
+    //         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white flex items-center justify-center p-2">
+    //             <div className="max-w-2xl w-full">
+    //                 <div className="text-center mb-12">
+    //                     {/* <div className="flex items-center justify-center space-x-3 mb-4">
+    //                         <Microscope className="h-16 w-16 text-blue-400" />
+    //                     </div> */}
+    //                     {/* <h1 className="text-4xl font-bold text-white mb-3">Microplastics Detection System</h1> */}
+    //                     {/* <p className="text-xl text-gray-400">AI-Powered Binary and Multi-Class Classification</p> */}
+    //                 </div>
+
+    //                 {analysisStage === 'idle' ? (
+    //                     <div className="bg-gray-800/60 backdrop-blur-sm border border-gray-700/50 rounded-xl p-12 text-center">
+    //                         <Database className="h-20 w-20 text-gray-500 mx-auto mb-6" />
+    //                         <h2 className="text-2xl font-semibold text-white mb-4">Ready to Analyze Sample</h2>
+    //                         <p className="text-gray-400 mb-8">Click below to start automated detection from database</p>
+    //                         <button
+    //                             onClick={startAnalysis}
+    //                             className="flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-lg transition-all duration-300 font-medium shadow-lg hover:shadow-xl mx-auto text-lg"
+    //                         >
+    //                             <Play className="h-6 w-6" />
+    //                             <span>Start Analysis</span>
+    //                         </button>
+    //                     </div>
+    //                 ) : (
+    //                     <div className="bg-gray-800/60 backdrop-blur-sm border border-gray-700/50 rounded-xl p-12 text-center">
+    //                         <Loader2 className="h-20 w-20 text-blue-400 animate-spin mx-auto mb-6" />
+    //                         <h2 className="text-2xl font-semibold text-white mb-4">Loading Sample from Database</h2>
+    //                         <p className="text-gray-400 mb-6">Retrieving microscopic image data...</p>
+    //                         <div className="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+    //                             <div
+    //                                 className="bg-gradient-to-r from-blue-500 to-blue-600 h-3 transition-all duration-300 rounded-full"
+    //                                 style={{ width: `${progress}%` }}
+    //                             ></div>
+    //                         </div>
+    //                         <p className="text-gray-500 mt-3 text-sm">{progress}%</p>
+    //                     </div>
+    //                 )}
+
+    //                 <div className="mt-8 grid grid-cols-3 gap-4 text-center text-sm">
+    //                     <div className="bg-gray-800/40 rounded-lg p-4 border border-gray-700/50">
+    //                         <p className="text-gray-400 mb-1">Stage 1</p>
+    //                         <p className="text-white font-semibold">Database Loading</p>
+    //                     </div>
+    //                     <div className="bg-gray-800/40 rounded-lg p-4 border border-gray-700/50">
+    //                         <p className="text-gray-400 mb-1">Stage 2</p>
+    //                         <p className="text-white font-semibold">AI Processing</p>
+    //                     </div>
+    //                     <div className="bg-gray-800/40 rounded-lg p-4 border border-gray-700/50">
+    //                         <p className="text-gray-400 mb-1">Stage 3</p>
+    //                         <p className="text-white font-semibold">Classification</p>
+    //                     </div>
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     );
+    // }
+    // START PAGE
     if (currentPage === 'start') {
         return (
-            <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white flex items-center justify-center p-2">
-                <div className="max-w-2xl w-full">
+            <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white flex items-center justify-center p-4">
+                <div className="max-w-4xl w-full">
+                    {/* Header */}
                     <div className="text-center mb-12">
-                        {/* <div className="flex items-center justify-center space-x-3 mb-4">
-                            <Microscope className="h-16 w-16 text-blue-400" />
-                        </div> */}
-                        {/* <h1 className="text-4xl font-bold text-white mb-3">Microplastics Detection System</h1> */}
-                        {/* <p className="text-xl text-gray-400">AI-Powered Binary and Multi-Class Classification</p> */}
+                        <h1 className="text-4xl font-bold text-white mb-3">Microplastics Detection System</h1>
+                        <p className="text-lg text-gray-400">Choose how you want to provide the sample image</p>
                     </div>
 
                     {analysisStage === 'idle' ? (
-                        <div className="bg-gray-800/60 backdrop-blur-sm border border-gray-700/50 rounded-xl p-12 text-center">
-                            <Database className="h-20 w-20 text-gray-500 mx-auto mb-6" />
-                            <h2 className="text-2xl font-semibold text-white mb-4">Ready to Analyze Sample</h2>
-                            <p className="text-gray-400 mb-8">Click below to start automated detection from database</p>
+                        <div className="grid md:grid-cols-2 gap-8">
+                            {/* Option 1: Capture Image */}
                             <button
                                 onClick={startAnalysis}
-                                className="flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-lg transition-all duration-300 font-medium shadow-lg hover:shadow-xl mx-auto text-lg"
+                                className="group relative bg-gray-800/60 border border-gray-700/50 rounded-2xl p-8 flex flex-col items-center text-center transition-all duration-300 hover:scale-105 hover:border-green-500/60 hover:shadow-xl hover:shadow-green-500/20"
                             >
-                                <Play className="h-6 w-6" />
-                                <span>Start Analysis</span>
+                                <div className="bg-green-600/20 p-6 rounded-full mb-6 group-hover:bg-green-600/30 transition">
+                                    <Camera className="h-12 w-12 text-green-400" />
+                                </div>
+                                <h2 className="text-xl font-semibold text-white mb-3">Capture Image</h2>
+                                <p className="text-gray-400 text-sm">
+                                    Use the connected hardware prototype to capture a live microscopic image.
+                                </p>
                             </button>
+
+                            {/* Option 2: Upload Image */}
+                            <label className="group relative bg-gray-800/60 border border-gray-700/50 rounded-2xl p-8 flex flex-col items-center text-center transition-all duration-300 hover:scale-105 hover:border-blue-500/60 hover:shadow-xl hover:shadow-blue-500/20 cursor-pointer">
+                                <div className="bg-blue-600/20 p-6 rounded-full mb-6 group-hover:bg-blue-600/30 transition">
+                                    <ImageIcon className="h-12 w-12 text-blue-400" />
+                                </div>
+                                <h2 className="text-xl font-semibold text-white mb-3">Upload Image</h2>
+                                <p className="text-gray-400 text-sm">
+                                    Manually upload a sample image for analysis and classification.
+                                </p>
+                                <input type="file" accept="image/*" className="hidden" onChange={startAnalysis} />
+                            </label>
                         </div>
                     ) : (
+                        // Loading Stage
                         <div className="bg-gray-800/60 backdrop-blur-sm border border-gray-700/50 rounded-xl p-12 text-center">
                             <Loader2 className="h-20 w-20 text-blue-400 animate-spin mx-auto mb-6" />
-                            <h2 className="text-2xl font-semibold text-white mb-4">Loading Sample from Database</h2>
+                            <h2 className="text-2xl font-semibold text-white mb-4">Loading Sample</h2>
                             <p className="text-gray-400 mb-6">Retrieving microscopic image data...</p>
                             <div className="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
                                 <div
@@ -123,7 +196,8 @@ const Analysis = () => {
                         </div>
                     )}
 
-                    <div className="mt-8 grid grid-cols-3 gap-4 text-center text-sm">
+                    {/* Stages */}
+                    <div className="mt-12 grid grid-cols-3 gap-6 text-center text-sm">
                         <div className="bg-gray-800/40 rounded-lg p-4 border border-gray-700/50">
                             <p className="text-gray-400 mb-1">Stage 1</p>
                             <p className="text-white font-semibold">Database Loading</p>

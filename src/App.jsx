@@ -5,6 +5,8 @@ import MicroplasticsDetectionSystem from "./Components/MicroplasticsDetectionSys
 import AboutUs from "./Components/AboutUs";
 import Navbar from "./Components/navbar";
 import Analysis from "./Components/Analysis";
+import LoginSignupPage from "./pages/LoginSignupPage";
+import ProfilePage from "./pages/ProfilePage";
 
 const App = () => {
   return (
@@ -15,6 +17,8 @@ const App = () => {
         <Route path="/dashboard" element={<MicroplasticsDetectionSystem />} />
         <Route path="/analysis" element={<Analysis />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/login" element={<LoginSignupPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Routes>
     </Router>
   );
