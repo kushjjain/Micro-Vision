@@ -51,7 +51,7 @@ const Analysis = () => {
                     { name: 'PS', fullName: 'Polystyrene', confidence: 0.88, color: '#F59E0B' }, // 85–95%
                     { name: 'PE', fullName: 'Polyethylene', confidence: 2.12, color: '#3B82F6' }, // 75–85%
                     { name: 'PHA', fullName: 'Polyhydroxyalkanoates', confidence: 1.34, color: '#10B981' }, // 70–82%
-                    { name: 'LEPD', fullName: 'Polypropylene', confidence: 93.57, color: '#EF4444' }, // 88–95%
+                    { name: 'PP', fullName: 'Polypropylene', confidence: 93.57, color: '#EF4444' }, // 88–95%
                     { name: 'Other', fullName: 'Other Plastic', confidence: 2.09, color: '#8B5CF6' } // 65–78%
                 ];
                 setClassificationResults(results.sort((a, b) => b.confidence - a.confidence));
