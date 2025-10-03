@@ -13,7 +13,7 @@ const MicroplasticsDetectionSystem = () => {
     const polymerConfidenceData = [
         { polymer: 'PE', confidence: 96.8, color: '#3B82F6' },
         { polymer: 'PS', confidence: 87.3, color: '#F97316' },
-        { polymer: 'LEPD', confidence: 78.5, color: '#EF4444' },
+        { polymer: 'PP', confidence: 78.5, color: '#EF4444' },
         { polymer: 'PHA', confidence: 82.1, color: '#10B981' },
     ];
 
@@ -21,7 +21,7 @@ const MicroplasticsDetectionSystem = () => {
         { name: 'PE', value: 45, color: '#3B82F6' },
         { name: 'PS', value: 32, color: '#F97316' },
         { name: 'PHA', value: 18, color: '#10B981' },
-        { name: 'LEPD', value: 25, color: '#EF4444' }
+        { name: 'PP', value: 25, color: '#EF4444' }
     ];
 
     // Time-based detection data
@@ -31,7 +31,7 @@ const MicroplasticsDetectionSystem = () => {
         { type: 'PE', avgConfidence: 96.8, detections: 45 },
         { type: 'PS', avgConfidence: 87.3, detections: 32 },
         { type: 'PHA', avgConfidence: 82.1, detections: 18 },
-        { type: 'LEPD', avgConfidence: 78.5, detections: 25 },
+        { type: 'PP', avgConfidence: 78.5, detections: 25 },
     ];
 
     const systemMetrics = {
