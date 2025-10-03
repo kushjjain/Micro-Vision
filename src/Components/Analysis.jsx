@@ -21,12 +21,12 @@ const Analysis = () => {
         setTimeout(() => {
             setCurrentPage('images');
             setAnalysisStage('processing'); // Shows loading for image 2
-        }, 7000);
+        }, 5000);
 
         // Stage 2: Show processed image after 2 more seconds (7 seconds total)
         setTimeout(() => {
             setAnalysisStage('processed'); // New stage to show the image
-        }, 7000);
+        }, 10000);
 
         // Stage 3: Start binary classification (10 seconds after showing image)
         setTimeout(() => {
