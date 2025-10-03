@@ -237,7 +237,7 @@ const MicroplasticsDetectionSystem = () => {
                             </div>
                             <div className="flex justify-between items-center">
                                 <span className="text-gray-400 text-sm">Model Architecture</span>
-                                <span className="text-white font-medium">CNN ResNet-50</span>
+                                <span className="text-white font-medium">SVM Classifier</span>
                             </div>
                             <div className="flex justify-between items-center">
                                 <span className="text-gray-400 text-sm">Network Status</span>

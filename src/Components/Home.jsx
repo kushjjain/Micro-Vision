@@ -81,7 +81,7 @@ function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  to="/analysis"
+                  to="/login"
                   className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
                 >
                   <span>Launch Detection System</span>
