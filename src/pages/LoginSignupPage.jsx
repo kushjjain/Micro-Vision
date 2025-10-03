@@ -9,9 +9,35 @@ const LoginSignupPage = () => {
         email: '',
         password: ''
     });
-
+    const [error, setError] = useState('');
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if (!isLogin && !formData.name) {
+            setError('Please enter your full name.');
+            return;
+        }
+
+        // Email validation
+        if (!formData.email) {
+            setError('Please enter your email address.');
+            return;
+        }
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(formData.email)) {
+            setError('Please enter a valid email address.');
+            return;
+        }
+
+        // Password validation
+        if (!formData.password) {
+            setError('Please enter your password.');
+            return;
+        }
+
+        // Clear error
+        setError('');
+
         // Simulate login/signup
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('userName', formData.name || formData.email.split('@')[0]);
@@ -121,6 +147,7 @@ const LoginSignupPage = () => {
                                     onChange={handleChange}
                                     placeholder="Enter your password"
                                     className="w-full bg-gray-900/50 border border-gray-600 rounded-lg pl-11 pr-11 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
+
                                 />
                                 <button
                                     type="button"
@@ -135,7 +162,8 @@ const LoginSignupPage = () => {
                                 </button>
                             </div>
                         </div>
-
+                        {/* Error Message */}
+                        {error && <p className="text-red-400 text-sm">{error}</p>}
                         {/* Forgot Password (Only for Login) */}
                         {isLogin && (
                             <div className="flex justify-end">
