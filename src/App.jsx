@@ -7,6 +7,7 @@ import Navbar from "./Components/navbar";
 import Analysis from "./Components/Analysis";
 import LoginSignupPage from "./pages/LoginSignupPage";
 import ProfilePage from "./pages/ProfilePage";
+import Insights from "./pages/Insights";
 
 const App = () => {
   return (
@@ -14,11 +15,12 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/dashboard" element={<MicroplasticsDetectionSystem />} />
+        <Route path="/microplasticsdetectionsystem" element={<MicroplasticsDetectionSystem />} />
         <Route path="/analysis" element={<Analysis />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/login" element={<LoginSignupPage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/insights" element={<Insights />} />
       </Routes>
     </Router>
   );
