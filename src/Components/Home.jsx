@@ -5,10 +5,16 @@ import { Eye } from "lucide-react";
 
 function Home() {
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000);
     return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    setIsLoggedIn(loggedIn);
   }, []);
 
   return (
@@ -35,7 +41,7 @@ function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/Analysis"
+                to={isLoggedIn ? '/analysis' : '/login'}
                 className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
               >
                 <span>Launch Detection System</span>
